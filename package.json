@@ -1,0 +1,27 @@
+{
+  "name": "instant-noodles",
+  "version": "1.0.0",
+  "description": "A program designed to track unhealthy eating habits",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kornn38/instant-noodles.git"
+  },
+  "author": "Korn L",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kornn38/instant-noodles/issues"
+  },
+  "homepage": "https://github.com/kornn38/instant-noodles#readme",
+  "dependencies": {
+    "core-js": "^3.17.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
+}
