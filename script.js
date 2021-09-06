@@ -30,3 +30,5 @@ clearCups.addEventListener('click', function () {
   console.log(currValue);
   localStorage.clear('number');
 });
+
+console.log('TEST');
