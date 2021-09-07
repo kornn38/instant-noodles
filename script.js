@@ -3,29 +3,25 @@ const addCups = document.querySelector('.add-qty');
 const removeCups = document.querySelector('.rem-qty');
 const clearCups = document.querySelector('.clear-qty');
 
-// displayCups.value = localStorage.length;
-let local = 0;
+let local = localStorage.getItem('number');
 let currValue = displayCups.textContent;
-localStorage.setItem('accu', local);
-// console.log(currValue);
-
-const markup = `<h2>${localStorage.getItem('accu')}</h2>`;
-// console.log(currValue);
+displayCups.textContent = localStorage.getItem('number');
 
 addCups.addEventListener('click', function () {
   currValue++;
-  displayCups.textContent = currValue;
-
-  localStorage.setItem('number', currValue);
   local = localStorage.getItem('number');
+  displayCups.textContent = +local + 1;
+  localStorage.setItem('number', +displayCups.textContent);
+
   console.log(currValue);
-  console.log(local);
+  console.log(+local);
 });
 removeCups.addEventListener('click', function () {
-  if (!currValue) return;
+  if (!+displayCups.textContent) return;
   currValue--;
-  displayCups.textContent = currValue;
-  local = localStorage.setItem('number', currValue);
+  local = localStorage.getItem('number');
+  displayCups.textContent = +local - 1;
+  localStorage.setItem('number', +displayCups.textContent);
 });
 clearCups.addEventListener('click', function () {
   currValue = 0;
@@ -33,5 +29,3 @@ clearCups.addEventListener('click', function () {
   console.log(currValue);
   local = localStorage.clear('number');
 });
-
-console.log('TEST');
